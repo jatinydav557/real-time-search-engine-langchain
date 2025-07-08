@@ -1,34 +1,26 @@
-Thanks for the updated code!
-
-Based on your latest script, **Tavily is *not* used** — you're using a **custom `SafeDuckDuckGoSearchRun`**, along with **Wikipedia** and **Arxiv** as tools, inside a LangChain agent powered by **Groq LLaMA3-70B**.
-
-Here’s your updated, corrected, and clean `README.md` — **focused on DuckDuckGo**, **not Tavily**:
-
----
-
-````markdown
+🔗 👉 **[Watch the Demo on YouTube](https://www.youtube.com/watch?v=rg7M0oZdpFM&list=PLe-YIIlt-fbO3hXVoaPK56ikWRT0A9Gzr&index=4&ab_channel=Jatin)**
 # 🔍 Web Search Chatbot using LangChain, Groq, DuckDuckGo, Wikipedia & Arxiv
 
-This project is a **real-time web search chatbot** built with [LangChain](https://www.langchain.com/), [Groq](https://groq.com), and a set of research & web tools including:
+This project is a **real-time web search chatbot** built with [LangChain](https://www.langchain.com/), [Groq](https://groq.com), and a set of intelligent research tools including:
 
 - 🦆 **DuckDuckGo** (for general web search)
 - 📚 **Arxiv** (for academic papers)
 - 🧠 **Wikipedia** (for encyclopedic knowledge)
 
-The app allows you to ask **any kind of question**, and the chatbot will search across the web and answer using **Groq’s blazing-fast LLaMA3-70B model**.
+It uses LangChain’s agent framework and Groq’s blazing-fast **LLaMA3-70B** model to answer any question — with smart tool use and natural conversations, all in a clean Streamlit UI.
 
 ---
 
 ## 🧠 How It Works
 
-1. User asks a question via chat.
-2. The app uses LangChain to initialize an **agent**.
-3. The agent is equipped with 3 tools:
-   - DuckDuckGo (with custom rate-limit-safe wrapper)
-   - Arxiv search
-   - Wikipedia lookup
-4. Groq LLM processes the inputs and generates a response.
-5. Results are streamed directly into the Streamlit chat UI.
+1. Ask a question in the chat.
+2. A LangChain **Agent** is initialized with access to:
+   - 🔍 DuckDuckGo (via custom safe wrapper)
+   - 📖 Wikipedia search
+   - 📚 Arxiv API
+3. The question is routed through tools as needed.
+4. **Groq LLaMA3-70B** processes and returns the best possible answer.
+5. The full chain + answer is streamed in the chat window using **Streamlit**.
 
 ---
 
@@ -36,11 +28,11 @@ The app allows you to ask **any kind of question**, and the chatbot will search 
 
 ```bash
 .
-├── app.py              # Main Streamlit app
-├── .env                # Environment variables (GROQ_API_KEY)
+├── app.py              # Streamlit app code
+├── .env                # Stores your Groq API key
 ├── requirements.txt    # Python dependencies
-└── README.md           # Project documentation
-````
+└── README.md           # You're reading it!
+```
 
 ---
 
@@ -49,22 +41,20 @@ The app allows you to ask **any kind of question**, and the chatbot will search 
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/web-search-chatbot.git
-cd web-search-chatbot
+git clone https://github.com/jatinydav557/real-time-search-engine-langchain.git
+cd real-time-search-engine-langchain
 ```
 
 ### 2️⃣ Create a Virtual Environment
 
 ```bash
-uv venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 ```
 
 ### 3️⃣ Install Dependencies
 
 ```bash
-uv pip install -r requirements.txt
-# or
 pip install -r requirements.txt
 ```
 
@@ -82,27 +72,29 @@ GROQ_API_KEY=your_groq_api_key
 streamlit run app.py
 ```
 
-Open in browser at: [http://localhost:8501](http://localhost:8501)
+Then open: [http://localhost:8501](http://localhost:8501)
 
 ---
 
-## 💡 Example Prompts
+## 💬 Example Prompts
 
-* “What is LangChain?”
-* “Find the latest Arxiv paper on Transformer models.”
-* “Who invented self-attention?”
-* “Summarize quantum computing from Wikipedia.”
+- “What is LangChain used for?”
+- “Find a recent Arxiv paper on diffusion models.”
+- “Who invented the attention mechanism?”
+- “Give me a short summary of Generative AI from Wikipedia.”
 
 ---
 
 ## 🛠️ Tech Stack
 
-* 🧠 **LangChain Agents**
-* 🤖 **Groq LLM (LLaMA3-70B)**
-* 🔍 **DuckDuckGo Web Search**
-* 📚 **Arxiv API**
-* 📖 **Wikipedia API**
-* 🧵 **Streamlit Chat UI**
+| Tool / Lib         | Role                                     |
+|--------------------|------------------------------------------|
+| 🧠 LangChain        | Agent framework + tool routing           |
+| 🤖 Groq LLaMA3-70B  | High-speed LLM                           |
+| 🦆 DuckDuckGo       | General web search results               |
+| 📚 Arxiv API        | Academic paper lookup                    |
+| 📖 Wikipedia        | Encyclopedic knowledge tool             |
+| 🎨 Streamlit        | Chat interface and UI                   |
 
 ---
 
@@ -126,42 +118,38 @@ wikipedia
 
 ---
 
-## 🎓 About Me
+## 🙋‍♂️ About Me
 
-I'm currently an **MCA final-year student**, experimenting with **agentic LLM tools**, real-time APIs, and conversational AI.
+Hey, I’m **Jatin** — a final-year **MCA student**, passionate about building GenAI tools using **LLMs, LangChain, RAG pipelines, and conversational AI**.
 
-🔍 This project demonstrates how modern LLMs like Groq’s LLaMA3 can interact with multiple tools using LangChain's agent framework.
+📌 I’m currently building over **20+ projects** as part of my AI portfolio to land a top-tier role in:
 
-📌 Actively looking for roles in:
-
-* 🧠 LLM + RAG Systems
-* 🤖 Agentic AI
-* ⚙️ MLOps / AI Tooling
-* 📊 Applied Data Science
-
-🔗 [LinkedIn](https://www.linkedin.com/in/yourname)
-🌐 [Portfolio](https://yourwebsite.com)
+- 🤖 LLM / GenAI Engineering  
+- 📊 Applied Data Science  
+- 🧠 NLP + Retrieval-Augmented Generation  
+- ⚙️ MLOps & Tooling
 
 ---
 
-## 🔧 Future Improvements
+## 🤝 Let's Connect
 
-* Add Tavily or SerpAPI for robust search fallback
-* Add memory and reranking
-* Export chat history to markdown or PDF
-* Deploy to Hugging Face Spaces or Streamlit Cloud
-
----
-
-⭐ **If you found this useful, give it a star and feel free to fork!**
-
-```
+- **💼 LinkedIn:** [linkedin.com/in/jatin557](https://www.linkedin.com/in/jatin557)  
+- **📦 GitHub:** [github.com/jatinydav557](https://github.com/jatinydav557)  
+- **📬 Email:** [jatinydav557@gmail.com](mailto:jatinydav557@gmail.com)  
+- **📱 Contact:** [+91-7340386035](tel:+917340386035)  
+- **🎥 YouTube:** [See My Other AI Projects](https://www.youtube.com/@jatinML/playlists)
 
 ---
 
-Let me know:
-- If you want the **dark theme banner** for this project as well
-- If you plan to eventually **switch from DuckDuckGo to Tavily**, so I can prepare that README version too
+## 🧭 What’s Next?
 
-Ready for the next project whenever you are!
-```
+- [ ] Add SerpAPI or Tavily for fallback search
+- [ ] Add memory for chat history continuity
+- [ ] Deploy to Hugging Face / GCP / Streamlit Cloud
+- [ ] Add PDF export or markdown export for Q&A logs
+
+---
+
+⭐ If you liked this project, **star it**, fork it, or share it — it really helps!
+
+> “Build tools that help others *think better* — that’s where AI shines.”
